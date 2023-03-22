@@ -13,11 +13,12 @@ Upload the .py script and .csv file to an S3 bucket. Make sure to note down the 
 
 ## Running the job
 * Open your terminal and run the following command to create a new step:
-`
+```
 aws emr add-steps --cluster-id <cluster_id> --steps Type=spark,Name=<job_name>,ActionOnFailure=CONTINUE,Args=[--deploy-mode,cluster,--master,yarn,<s3_path_to_script.py>,<s3_path_to_csv_file>]
-`
+````
+
 * Once you've run the command, you should see a step ID in the output. Use this ID to check the status of the step using the following command:
-`
+```
 aws emr describe-step --cluster-id <your-cluster-id> --step-id <your-step-id>
-`
+```
 If the step has completed successfully, you should see `"State": "COMPLETED"` in your output.
