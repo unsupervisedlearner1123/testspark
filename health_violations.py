@@ -5,11 +5,13 @@ from pyspark.sql import SparkSession
 
 def calculate_red_violations(data_source, output_uri):
     """
-    Processes sample food establishment inspection data and queries the data to find the top 10 establishments
-    with the most Red violations from 2006 to 2020.
+    Processes sample food establishment inspection data and queries the data 
+    to find the top 10 establishments with the most Red violations from 2006 to 2020.
 
-    :param data_source: The URI of your food establishment data CSV, such as 's3://DOC-EXAMPLE-BUCKET/food-establishment-data.csv'.
-    :param output_uri: The URI where output is written, such as 's3://DOC-EXAMPLE-BUCKET/restaurant_violation_results'.
+    :param data_source: The URI of your food establishment data CSV, 
+                        such as 's3://DOC-EXAMPLE-BUCKET/food-establishment-data.csv'.
+    :param output_uri: The URI where output is written, 
+                        such as 's3://DOC-EXAMPLE-BUCKET/restaurant_violation_results'.
     """
     with SparkSession.builder.appName(
         "Calculate Red Health Violations"
